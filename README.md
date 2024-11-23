@@ -1,6 +1,6 @@
 # Proses CI-CD
 
-Proses CI/CD (Continuous Integration/Continuous Deployment) yang dijelaskan dalam workflow ini dimulai ketika ada push atau pull request ke branch main dari repository GitHub. Pertama, workflow ini menjalankan beberapa job pada runner ubuntu-latest. Tahapan awal mencakup checkout kode dari repository menggunakan actions/checkout@v3, kemudian mengatur Node.js versi 16 menggunakan actions/setup-node@v3. Setelah itu, dependensi proyek diinstal dengan menjalankan perintah npm install.
+Proses CI/CD (Continuous Integration/Continuous Deployment) yang dalam workflow ini dimulai ketika terdapat push atau pull request ke branch main dari repository GitHub. Pertama, workflow ini menjalankan beberapa job pada runner ubuntu-latest. Tahapan awal mencakup checkout kode dari repository menggunakan actions/checkout@v3, kemudian mengatur Node.js versi 16 menggunakan actions/setup-node@v3. Setelah itu, dependensi proyek diinstal dengan menjalankan perintah npm install.
 
 Setelah dependensi terinstal, proses build proyek dijalankan dengan perintah npm run build, yang menggunakan Vite untuk membangun proyek React. Hasil build kemudian disiapkan untuk deployment dengan menyalin output dari direktori dist ke direktori out.
 
