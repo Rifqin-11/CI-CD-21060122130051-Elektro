@@ -18,11 +18,17 @@ jobs:
       with:
         node-version: 16
 
-    - name: Deploy to GitHub Pages
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
+    - name: Prepare deployment directory
       run: |
-        npm run build
         mkdir -p out
-        echo "Hello from CI/CD Deployment" > out/index.html
+        cp -r dist/* out/ # Menggunakan output dari Vite
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
